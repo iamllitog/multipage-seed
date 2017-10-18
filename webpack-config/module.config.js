@@ -1,17 +1,39 @@
+var path = require('path');
 var dirVars = require('./base/dir-vars.config.js');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var eslintFormatter = require('eslint-friendly-formatter');
 module.exports = {
   rules: [
+    {
+      test: /\.css$/,
+      exclude: /node_modules/,
+      use: ExtractTextPlugin.extract([
+        {
+          loader: 'css-loader',
+          options: {
+            minimize: true,
+            '-autoprefixer': true,
+          },
+        },
+        {
+          loader: 'postcss-loader',
+          options: require('./config/postcss.config.js'),
+        },
+      ]),
+    },
     {
       test: /\.js$/,
       enforce: 'pre',
       loader: 'eslint-loader',
       include: dirVars.srcRootDir,
-    //   exclude: /bootstrap/,
+      exclude: dirVars.vendorDir,
       options: {
         formatter: eslintFormatter,
         fix: true,
-      }
+        configFile: path.resolve(dirVars.rootDir, './.eslintrc.js'),
+        failOnWarning: true,
+        failOnError: true,
+      },
     },
     {
       test: /\.js$/,

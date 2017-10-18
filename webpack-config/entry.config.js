@@ -4,7 +4,6 @@ var pageArr = require('./base/page-entries.config.js');
 var configEntry = {};
 
 pageArr.forEach((page) => {
-  configEntry[page] = path.resolve(dirVars.pagesDir, page + '/page');
+  configEntry[page] = path.resolve(dirVars.pageDir, page + '/index');
 });
-
 module.exports = configEntry;
