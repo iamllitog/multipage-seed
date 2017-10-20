@@ -7,7 +7,7 @@
     "prod-env": "webpack --progress --colors --bail",
     "test-env": "webpack --progress --colors --config ./webpack.dev.config.js",
     "doubles-env": "webpack --progress --colors --watch --config ./webpack.dev.config.js",
-    "solo-env": "webpack-dev-server --inline --progress --compress --devtool eval --content-base build/ --config ./webpack.dev.config.js",
+    "solo-env": "webpack-dev-server --inline --progress --compress --devtool eval --content-base build/ --config ./webpack.solo.config.js",
     "profile": "webpack --colors --profile --display-modules"
   },
   "author": "iamllitog",

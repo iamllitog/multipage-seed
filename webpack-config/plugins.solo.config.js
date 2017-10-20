@@ -11,7 +11,7 @@ pluginsConfig.push(new webpack.DefinePlugin({
 
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
-    filename: `../views/${page}.ejs`,
+    filename: `views/${page}.html`,
     template: path.resolve(dirVars.pageDir, `./${page}/render.js`),
     chunks: ['webpack-runtime', page, 'commons'],
     hash: true, // 为静态资源生成hash值

@@ -1,9 +1,5 @@
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
-var dirVars = require('./dir-vars.config.js');
-var pageArr = require('./page-entries.config.js');
 
 var HashOutput = require('webpack-plugin-hash-output');
 
@@ -26,14 +22,4 @@ var configPlugins = [
   }),
 ];
 
-pageArr.forEach((page) => {
-  const htmlPlugin = new HtmlWebpackPlugin({
-    filename: `../views/${page}.ejs`,
-    template: path.resolve(dirVars.pageDir, `./${page}/render.js`),
-    chunks: ['webpack-runtime', page, 'commons'],
-    hash: true, // 为静态资源生成hash值
-    xhtml: true,
-  });
-  configPlugins.push(htmlPlugin);
-});
 module.exports = configPlugins;

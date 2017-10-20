@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getToken">获取token</button>
+    <form action="/obt/api/admin/oa/login/ssoLogin" method="post" id="form">
+        <input type="hidden" name="appKey" value="mrnew">
+        <input type="hidden" name="token" id="token">
+        <input type="hidden" name="accountName" value="lifengfeng">
+        <input type="hidden" name="signature" value="504c5996c0e0bdd70e79bb5523c740eb">
+    </form>
+    <script type="text/javascript" src="<%= vendor.js.jquery %>"></script>
+</body>
+</html>
