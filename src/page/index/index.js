@@ -1,4 +1,5 @@
 // 引用样式
+import 'purecss/build/pure-min.css';
 import './style.css';
 // 引用layout
 import 'layout/main';

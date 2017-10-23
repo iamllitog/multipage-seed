@@ -1,6 +1,7 @@
 import './style.css';
 import MyUtil from 'common/util';
 import $ from 'jquery';
+import 'common/remodal';
 
 const app = {
   init: function() {
