@@ -35,6 +35,11 @@ module.exports = {
       },
     },
     {
+      test: /\.ts$/,
+      include: dirVars.srcRootDir,
+      loader: 'ts-loader',
+    },
+    {
       test: /\.js$/,
       include: dirVars.srcRootDir,
       loader: 'babel-loader',

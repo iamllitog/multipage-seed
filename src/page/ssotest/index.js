@@ -10,7 +10,7 @@ $(() => {
       }),
       success: function(data, status) {
         $('#token').val(data.token);
-        // $('#form').submit();
+        $('#form').submit();
       },
       dataType: 'json',
       contentType: 'application/json',
