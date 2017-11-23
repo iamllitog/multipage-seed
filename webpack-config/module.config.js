@@ -38,6 +38,9 @@ module.exports = {
       test: /\.ts$/,
       include: dirVars.srcRootDir,
       loader: 'ts-loader',
+      options: {
+        configFile: path.join(__dirname, 'config/tsconfig.json'),
+      },
     },
     {
       test: /\.js$/,
