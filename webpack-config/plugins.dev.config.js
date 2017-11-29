@@ -20,4 +20,8 @@ pageArr.forEach((page) => {
   pluginsConfig.push(htmlPlugin);
 });
 
+pluginsConfig.push(new webpack.ProvidePlugin({
+  Promise: 'bluebird',
+}));
+
 module.exports = pluginsConfig;

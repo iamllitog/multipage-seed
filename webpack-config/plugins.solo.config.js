@@ -9,6 +9,10 @@ pluginsConfig.push(new webpack.DefinePlugin({
   IS_PRODUCTION: false,
 }));
 
+pluginsConfig.push(new webpack.ProvidePlugin({
+  Promise: 'bluebird',
+}));
+
 pageArr.forEach((page) => {
   const htmlPlugin = new HtmlWebpackPlugin({
     filename: `views/${page}.html`,

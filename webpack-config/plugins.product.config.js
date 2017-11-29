@@ -16,6 +16,10 @@ pluginsConfig.push(new webpack.DefinePlugin({
   IS_PRODUCTION: true,
 }));
 
+pluginsConfig.push(new webpack.ProvidePlugin({
+  Promise: 'bluebird',
+}));
+
 pluginsConfig.push(new webpack.NoEmitOnErrorsPlugin()); // 配合CLI的--bail，一出error就终止webpack的编译进程
 
 /* HashedModuleIdsPlugin 这个插件，他是根据模块的相对路径生成一个长度只有四位的字符串作为模块的 module id ，
