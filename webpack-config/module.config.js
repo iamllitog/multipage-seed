@@ -36,11 +36,17 @@ module.exports = {
     },
     {
       test: /\.ts$/,
+      enforce: 'pre',
+      loader: 'tslint-loader',
+      include: dirVars.srcRootDir,
+      options: {
+        fix: true,
+      },
+    },
+    {
+      test: /\.ts$/,
       include: dirVars.srcRootDir,
       loader: 'ts-loader',
-      options: {
-        configFile: path.join(__dirname, 'config/tsconfig.json'),
-      },
     },
     {
       test: /\.js$/,
